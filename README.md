@@ -22,7 +22,7 @@ A random selection of useful Linux commands for a variety of tasks.
 
 * To rename (CR2) image files basing on EXIF info:
 
-   exiftool -progress -r -d "%Y-%m-%d %H-%M-%S%%-c -%%f.%%e" "-filename<DateTime Original" -ext CR2 .
+   exiftool -progress -r -d "%Y-%m-%d %H-%M-%S%%-c - %%f.%%e" "-filename<DateTimeOriginal" -ext CR2 .
 
    (replace *-filename* with *-testname* for a dry run)
 
