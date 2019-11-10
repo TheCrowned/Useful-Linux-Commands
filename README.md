@@ -14,7 +14,7 @@ A random selection of useful Linux commands for a variety of tasks.
 
    rsync --recursive -azPv --delete source/* /path/to/target
 
-   where a is for archive and z to compress
+   where a is for archive, z to compress, P for progress and v for verbose. Include --dry-run for dry run; --ignore-existing to only copy new files (on remote shares permissions may be different and all already present files may be copied over every time because seen as different).
 
 * To mount an SSH resource as local drive:
 
@@ -31,6 +31,19 @@ A random selection of useful Linux commands for a variety of tasks.
    phpunit --filter methodName className path/to/file.php
 
    to run all tests, just run *phpunit*
+
+* To enable/disable/see status startup of service
+
+   sudo systemctl enable btsync.service
+   sudo systemctl disable btsync.service
+   sudo systemctl status btsync.service
+
+* To handle torrents
+   service transmission-deamon stop
+   transmission-deamon --noauth
+   transmission-deamon -a "MAGNETURI"
+   transmission-daemon -l   #shows status
+   transmission-daemon -t 1 -r   #removes torrent N.1
 
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
