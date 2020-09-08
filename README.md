@@ -38,12 +38,26 @@ A random selection of useful Linux commands for a variety of tasks.
    sudo systemctl disable btsync.service
    sudo systemctl status btsync.service
 
+* To see fail2ban status for a given set (such as sshd)
+   
+   sudo fail2ban-client status sshd
+
 * To handle torrents
    service transmission-deamon stop
    transmission-deamon --noauth
    transmission-deamon -a "MAGNETURI"
    transmission-daemon -l   #shows status
    transmission-daemon -t 1 -r   #removes torrent N.1
+
+* To rip a CD
+   cdparanoia -B
+   for t in track{01..18}*.wav; do lame -b 320 $t; done
+   use puddletag to add ID3 tags
+
+* To loop microphone to speakers
+   package name is pavucontrol
+   pactl load-module module-loopback latency_msec=1
+   pactl unload-module $(pactl list short modules | awk '$2 =="module-loopback" { print $1 }' - ) # to disable
 
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
