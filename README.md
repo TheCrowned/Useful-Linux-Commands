@@ -8,7 +8,12 @@ A random selection of useful Linux commands for a variety of tasks.
 * To bulk rename files, changing extension case:
 
    for file in *.jpg; do 
-    mv "$file" "(basename "$file".jpg).JPG"; done
+    mv "$file" "$(basename "$file" jpg)JPG"; done
+
+* Bulk svg to png conversion
+
+   for file in *.svg; do
+   inkscape -w 2000 "$file" -e "$(basename "$file" svg)png"; done
 
 * To sync files in two folders:
 
