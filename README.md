@@ -64,6 +64,9 @@ A random selection of useful Linux commands for a variety of tasks.
    pactl load-module module-loopback latency_msec=1
    pactl unload-module $(pactl list short modules | awk '$2 =="module-loopback" { print $1 }' - ) # to disable
 
+* Batch convert HEIC files to jpg (imagemagick)
+   mogrify -format jpg *.HEIC
+
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
 
