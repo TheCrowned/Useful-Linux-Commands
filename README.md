@@ -67,6 +67,9 @@ A random selection of useful Linux commands for a variety of tasks.
 * Batch convert HEIC files to jpg (imagemagick)
    mogrify -format jpg *.HEIC
 
+* Copy from a samba resource 
+   rsync --recursive -azPv --delete --dry-run --ignore-existing /run/user/1000/gvfs/smb-share\:server\=olimpodisk.local\,share\=public/Stefano/Foto/* /media/stefano/Secrets/Foto/
+
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
 
