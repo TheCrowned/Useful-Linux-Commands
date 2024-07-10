@@ -1,6 +1,10 @@
 # Useful-Linux-Commands
 A random selection of useful Linux commands for a variety of tasks.
 
+* Recursive sed search replace:
+
+  find . -type f -exec sed -i 's/foo/bar/g' {} +
+
 * To renew certbot Let's Encrypt certificate:
 
    sudo ./certbot-auto --expand -d domain1.com domain2.com
