@@ -74,6 +74,10 @@ A random selection of useful Linux commands for a variety of tasks.
 * Copy from a samba resource 
    rsync --recursive -azPv --delete --dry-run --ignore-existing /run/user/1000/gvfs/smb-share\:server\=olimpodisk.local\,share\=public/Stefano/Foto/* /media/stefano/Secrets/Foto/
 
+* Sync two dirs
+  rsync --progress --delete -i -t -r  -e 'ssh -p 22 -o IdentityFile=~/.ssh/id -o IdentitiesOnly=yes' 'user@192.x.x.x:/dir/' '/dir'
+
+
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
 
