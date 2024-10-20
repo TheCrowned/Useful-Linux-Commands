@@ -77,6 +77,10 @@ A random selection of useful Linux commands for a variety of tasks.
 * Sync two dirs
   rsync --progress --delete -i -t -r  -e 'ssh -p 22 -o IdentityFile=~/.ssh/id -o IdentitiesOnly=yes' 'user@192.x.x.x:/dir/' '/dir'
 
+* To mount an LVE full disk encrypted volume
+  sudo vgchange -a y  # activates volume group
+  sudo mount /dev/mapper/vgmint2-root /mnt/test/  # mounts, fetch vgname with lsblk
+  # cryptsetup luksOpen /dev/sdb3 luks-d3921fcb-3103-4666-aa35-a2c6e2414756  # optional, to decrypt if OS doesn't ask; fetch ID with lsblk
 
 **Imagemagick**
 * To resize, compress and rename all jpg files in a folder appending *_tn*:
